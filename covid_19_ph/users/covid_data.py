@@ -1,11 +1,12 @@
 import requests
 import environ
 
+env = environ.Env()
 
 def get_data():
-    data_url = env("DATA_URL")
+    DATA_URL = env("DATA_URL")
     headers = {'Accept': 'application/json'}
-    r = requests.get(data_url, headers=headers)
+    r = requests.get(DATA_URL, headers=headers)
     stat = r.json()
     stat_data = {
       'stat': stat
@@ -14,9 +15,9 @@ def get_data():
 
 
 def get_vaccine():
-  vaccine_url = env("VACCINE_URL")
+  VACCINE_URL = env("VACCINE_URL")
   headers = {'Accept': 'application/json'}
-  request = requests.get(vaccine_url, headers=headers)
+  request = requests.get(VACCINE_URL, headers=headers)
   vaccine = request.json()
   vaccine_data = {
     'vaccine': vaccine
@@ -25,9 +26,9 @@ def get_vaccine():
 
 
 def get_therapeutic():
-  tp_url = env("TP_URL")
+  TP_URL = env("TP_URL")
   headers = {'Accept': 'application/json'}
-  r = requests.get(tp_url, headers=headers)
+  r = requests.get(TP_URL, headers=headers)
   therapeutic = r.json()
   tp_data = {
     'therapeutic': therapeutic
@@ -36,13 +37,13 @@ def get_therapeutic():
 
 
 def get_news():
-    news_url = env("NEWS_URL")
+    NEWS_URL = env("NEWS_URL")
     querystring = {"safeSearch":"true","toPublishedDate":"null","fromPublishedDate":"null","withThumbnails":"true","pageSize":"10","q":"covid, covid vaccine trial, covid therapeutics","autoCorrect":"false","pageNumber":"1"}
     headers = {
       'x-rapidapi-host': env("API_HOST"),
       'x-rapidapi-key': env("API_KEY"),
     }
-    r = requests.get(news_url, headers=headers, params=querystring)
+    r = requests.get(NEWS_URL, headers=headers, params=querystring)
     news = r.json()
     article_data = {
       'news': news,
