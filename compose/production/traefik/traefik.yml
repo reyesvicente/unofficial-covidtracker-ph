@@ -23,7 +23,7 @@ certificatesResolvers:
 http:
   routers:
     web-router:
-      rule: "Host(`covid19ph-unofficial.icvn.tech`)"
+      rule: "Host(`covid19ph-unofficial.icvn.tech`) || Host(`www.covid19ph-unofficial.icvn.tech`)"
       entryPoints:
         - web
       middlewares:
@@ -32,7 +32,7 @@ http:
       service: django
 
     web-secure-router:
-      rule: "Host(`covid19ph-unofficial.icvn.tech`)"
+      rule: "Host(`covid19ph-unofficial.icvn.tech`) || Host(`www.covid19ph-unofficial.icvn.tech`)"
       entryPoints:
         - web-secure
       middlewares:
