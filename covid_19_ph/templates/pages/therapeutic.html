@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static humanize %}
+{% block content %}
+<div class="grid-container margin-top-3">
+  <div class="grid-row">
+    <div class="grid-col">
+      <ul class="usa-card-group">
+        {% for t in therapeutic.data %}
+        {% autoescape off %}
+        <li class="tablet:grid-col-12 usa-card">
+          <div class="usa-card__container">
+            <header class="usa-card__header">
+              <h2 class="usa-card__heading">Medication Class: {{ t.medicationClass }}</h2>
+              <p>{{ t.lastUpdated }}</p>
+              <p>Trade Name(generic name): {{ t.tradeName }}</p>
+              <p>Spnosor: {{ t.sponsors|cut:"['"|cut:"'"|cut:"'"|cut:"]" }}</p>
+            </header>
+            <div class="usa-card__body">
+              <p>Trial Phase: {{ t.trialPhase }}</p>
+              <p>Institution: {{ t.developerResearcher|cut:"['"|cut:"'"|cut:"'"|cut:"]" }}</p>
+            </div>
+            <div class="usa-card__footer">
+              <p>{{ t.details|truncatechars:250 }}</p>
+              <a class="usa-button" href="https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-therapeutics-tracker" target="_blank">Read more</a>
+            </div>
+          </div>
+        </li>
+        {% endautoescape %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% include 'snippets/_sidebar.html' %}
+  </div>
+</div>
+{% endblock content %}

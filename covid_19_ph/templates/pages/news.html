@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static humanize %}
+{% block content %}
+<div class="grid-container margin-top-3">
+  <div class="grid-row">
+    <div class="grid-col">
+      <ul class="usa-card-group">
+        {% for article in news.value %}
+        {% autoescape off %}
+        <li class="tablet:grid-col-12 usa-card">
+          <div class="usa-card__container">
+            <header class="usa-card__header">
+              <h2 class="usa-card__heading">{{ article.title }}</h2>
+              <p>Date published: {{ article.datePublished|slice:":10" }}</p>
+            </header>
+            <div class="usa-card__media">
+              <div class="usa-card__img">
+                <img src="{{ article.image.url }}">
+              </div>
+            </div>
+            <div class="usa-card__body">
+              <p>{{ article.description }}</p>
+            </div>
+            <div class="usa-card__footer">
+              <p>{{ t.details|truncatechars:250 }}</p>
+              <a class="usa-button" href="{{ article.url }}" target="_blank">Read more</a>
+            </div>
+          </div>
+        </li>
+        {% endautoescape %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% include 'snippets/_sidebar.html' %}
+  </div>
+</div>
+{% endblock content %}

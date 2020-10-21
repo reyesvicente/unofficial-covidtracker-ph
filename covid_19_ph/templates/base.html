@@ -1,0 +1,239 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% block title %}Unofficial COVID-19 Philippines Tracker{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unofficial COVID-19 Philippines Tracker">
+  <meta name="author" content="Vicente G. Reyes">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+  {% block css %}
+
+  <!-- Your stuff: Third-party CSS libraries go here -->
+
+  <!-- This file stores project-specific CSS -->
+
+  <link href="{% static 'css/main.min.css' %}" rel="stylesheet">
+
+
+  {% endblock %}
+
+</head>
+
+<body>
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  <section class="usa-banner" aria-label="Official government website">
+    <div class="usa-accordion">
+      <header class="usa-banner__header">
+        <div class="usa-banner__inner">
+          <div class="grid-col-auto">
+            <img class="usa-banner__header-flag" src="https://disease.sh/assets/img/flags/ph.png" alt="U.S. flag">
+          </div>
+          <div class="grid-col-fill tablet:grid-col-auto">
+            <p class="usa-banner__header-text">Unofficial COVID-19 PH Tracker</p>
+            <p class="usa-banner__header-action" aria-hidden="true">More information</p>
+          </div>
+          <button class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner">
+            <span class="usa-banner__button-text">More information</span>
+          </button>
+        </div>
+      </header>
+      <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+        <div class="grid-row grid-gap-lg">
+          <div class="usa-banner__guidance tablet:grid-col-6">
+            <img class="usa-banner__icon usa-media-block__img" src="https://disease.sh/assets/img/virus.png" role="img"
+              alt="Dot gov">
+            <div class="usa-media-block__body">
+              <p>
+                <strong>
+                  disease.sh - Open Disease Data
+                </strong>
+                <br />
+                Sourced data from <a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a>, the
+                <a href="https://github.com/nytimes/covid-19-data">New York Times</a>, <a
+                  href="https://www.worldometers.info/coronavirus/">Worldometers</a>, and <a
+                  href="https://github.com/ActiveConclusion/COVID19_mobility">Apple reports</a> to give you a
+                comprehensive view of the data.
+
+              </p>
+            </div>
+          </div>
+          <div class="usa-banner__guidance tablet:grid-col-6">
+            <img class="usa-banner__icon usa-media-block__img" src="{% static 'img/vicente-g-reyes-developer.png' %}"
+              role="img" alt="Https">
+            <div class="usa-media-block__body">
+              <p>
+                <strong>
+                  Developed by Vicente G. Reyes
+                </strong>
+                <br />
+                A Self-Directed Learner, a Freelance Web Developer, a Volunteer Developer at <a
+                  href="https://projectwebsite.org">Project Website</a>, Moderator at <a href="https://dev.to">DEV</a>,
+                & a Podcast host. <a href="https://vgreyes.com">www.vgreyes.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="usa-overlay"></div>
+  <header class="usa-header usa-header--extended">
+    <div class="usa-navbar">
+      <div class="usa-logo" id="extended-logo">
+        <em class="usa-logo__text"><a href="/" title="Home" aria-label="Home">Unofficial COVID-19 Tracker PH</a></em>
+      </div>
+      <button class="usa-menu-btn">Menu</button>
+    </div>
+    <nav aria-label="Primary navigation" class="usa-nav">
+      <div class="usa-nav__inner"><button class="usa-nav__close"><img src="{% static 'img/close.svg' %}" role="img"
+            alt="close"></button>
+        <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item">
+            <a
+              {% if '/' == request.path %}
+                class="usa-nav__link usa-current"
+              {% else %}
+                class="usa-nav__link"
+              {% endif %} href="{% url 'home' %}">
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="usa-nav__primary-item">
+            <a
+              {% if '/vaccine-tracker/' == request.path %}
+                class="usa-nav__link usa-current"
+              {% else %}
+                class="usa-nav__link"
+              {% endif %} href="{% url 'vaccine' %}">
+              <span>Vaccine Trial</span>
+            </a>
+          </li>
+          <li class="usa-nav__primary-item">
+            <a {% if '/therapeutics/' == request.path %}
+              class="usa-nav__link usa-current"
+              {% else %}
+              class="usa-nav__link"
+              {% endif %} href="{% url 'therapeutic' %}">
+              <span>Therapeutics</span>
+            </a>
+          </li>
+          <li class="usa-nav__primary-item">
+            <a {% if '/global-news/' == request.path %}
+            class="usa-nav__link usa-current"
+            {% else %}
+            class="usa-nav__link"
+            {% endif %} href="{% url 'news' %}">
+            <span>Global News</span>
+            </a>
+          </li>
+        </ul>
+        <div class="usa-nav__secondary">
+          <ul class="usa-nav__secondary-links">
+            <li class="usa-nav__secondary-item">
+              <a href="https://www.doh.gov.ph/">Department of Health</a>
+            </li>
+            <li class="usa-nav__secondary-item">
+              <a href="https://www.doh.gov.ph/covid19tracker">Official COVID-19 PH Tracker</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button"
+        class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+  </div> <!-- /container -->
+  <footer class="usa-footer">
+    <div class="grid-container usa-footer__return-to-top">
+      <a href="#">Return to top</a>
+    </div>
+
+    <div class="usa-footer__secondary-section">
+      <div class="grid-container">
+        <div class="grid-row grid-gap">
+          <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+            <div class="mobile-lg:grid-col-auto">
+              <img class="usa-footer__logo-img" src="{% static 'img/vicente-g-reyes-developer.png' %}" alt="">
+            </div>
+            <div class="mobile-lg:grid-col-auto">
+              <h3 class="usa-footer__logo-heading">Vicente G. Reyes</h3>
+            </div>
+          </div>
+          <div class="usa-footer__contact-links mobile-lg:grid-col-6">
+            <div class="usa-footer__social-links grid-row grid-gap-1">
+              <div class="grid-col-auto">
+                <a class="usa-social-link usa-social-link--facebook" href="https://facebook.com/highcenbugtv">
+                  <span>Facebook</span>
+                </a>
+              </div>
+              <div class="grid-col-auto">
+                <a class="usa-social-link usa-social-link--twitter" href="https://twitter.com/highcenburg">
+                  <span>Twitter</span>
+                </a>
+              </div>
+              <div class="grid-col-auto">
+                <a class="usa-social-link usa-social-link--youtube" href="https://youtube.com/user/icenreyes">
+                  <span>YouTube</span>
+                </a>
+              </div>
+              <div class="grid-col-auto">
+                <a class="usa-social-link usa-social-link--dev" href="https://dev.to/highcenburg">
+                  <span>DEV</span>
+                </a>
+              </div>
+            </div>
+            <h3 class="usa-footer__contact-heading">For projects & consultation, reach me at:</h3>
+            <address class="usa-footer__address">
+              <div class="usa-footer__contact-info grid-row grid-gap">
+                <div class="grid-col-auto">
+
+                </div>
+                <div class="grid-col-auto">
+                  <a href="mailto:highcenbugtv@vgreyes.com">highcenbugtv@vgreyes.com</a>
+                </div>
+              </div>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% block modal %}{% endblock modal %}
+
+  {% block javascript %}
+
+
+  <script src="{% static 'js/main.min.js' %}"></script>
+
+
+  {% endblock javascript %}
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static humanize %}
+{% block content %}
+<main id="main-content">
+  <section class="usa-hero" aria-label="Introduction">
+  <div class="grid-container">
+    <div class="usa-hero__callout">
+      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">CASES TODAY:</span>{{ stat.todayCases|intcomma }}
+      </h1>
+      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">DEATHS TODAY:</span>{{ stat.todayDeaths|intcomma }}
+      </h1>
+      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">RECOVERED TODAY:</span>{{ stat.todayRecovered|intcomma }}
+      </h1><a class="usa-button" href="javascript:void(0)">Call to action</a>
+    </div>
+  </div>
+</section>
+
+  <section class="usa-graphic-list usa-section usa-section--dark">
+  <div class="grid-container">
+    <div class="usa-graphic-list__row grid-row grid-gap">
+      <div class="usa-media-block tablet:grid-col">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-joyent-96.png' %}" alt="Alt text">
+        <div class="usa-media-block__body">
+          <h2 class="usa-graphic-list__heading">{{ stat.active|intcomma }} total active cases</h2>
+          <p>The number of cases of people who have the virus.</p>
+        </div>
+      </div>
+      <div class="usa-media-block tablet:grid-col">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-total-sales-96.png' %}" alt="Alt text">
+        <div class="usa-media-block__body">
+          <h2 class="usa-graphic-list__heading">{{ stat.cases|intcomma }} total cases</h2>
+          <p>The number of cases of people who have tested positive.</p>
+        </div>
+      </div>
+    </div>
+    <div class="usa-graphic-list__row grid-row grid-gap">
+      <div class="usa-media-block tablet:grid-col">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-danger-of-death-96.png' %}" alt="Alt text">
+        <div class="usa-media-block__body">
+          <h2 class="usa-graphic-list__heading">{{ stat.deaths|intcomma }} total deaths</h2>
+          <p>The number of cases of people who have passed away.</p>
+        </div>
+      </div>
+      <div class="usa-media-block tablet:grid-col">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-recovery-96.png' %}" alt="Alt text">
+        <div class="usa-media-block__body">
+          <h2 class="usa-graphic-list__heading">{{ stat.recovered|intcomma }} total cases recovered</h2>
+          <p>The number of cases of people who have recovered from the virus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="test-section-id" class="usa-section">
+    <div class="grid-container">
+      <h2 class="font-heading-xl margin-y-0">What's up with this disease?</h2>
+      <p class="usa-intro">There are {{ stat.population|intcomma }} people in the country. Out of One Million, {{ stat.testsPerOneMillion|intcomma }}  only have been tested. There is one case for every {{ stat.oneCasePerPeople|intcomma }} people, {{ stat.oneDeathPerPeople|intcomma }} death cases, and {{ stat.activePerOneMillion|intcomma }} active cases per One Million. {{ stat.criticalPerOneMillion|floatformat }} are critical, and {{ stat.recoveredPerOneMillion|intcomma }} have recovered per One Million people.</p>
+      <a class="usa-button usa-button--big" href="#">Read more</a>
+    </div>
+  </section>
+
+  <section class="grid-container usa-section">
+    <div class="grid-row grid-gap">
+      <div class="tablet:grid-col-4">
+        <h2 class="font-heading-xl margin-top-0 tablet:margin-bottom-0">About the maker</h2>
+      </div>
+      <div class="tablet:grid-col-8 usa-prose">
+        <p>As a <a href="https://vgreyes.com/" target="_blank">Freelance Webflow/Django/Shopify Developer</a>, I couldn&#39;t help but think to add another side-project on my portfolio of projects which made ne decide to develop this website for everyone.</p> <p>This site provides data on the coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world. You can check the API <a href="https://disease.sh/" target="_blank">here</a>.</p> <p>The site uses <a href="https://cookiecutter-django.readthedocs.io/">cookiecutter</a>-<a href="http://djangoproject.org" target="_blank">django</a> as the backend technology, <a href="https://docker.com">Docker</a> & <a href="https://icons8.com">icons8</a> for the icons. Web hosting is sponsored by <a href="http://bit.ly/highcenbugtv" target="_blank">Digital Ocean.</a></p> <p>If you like what you see, consider buying me a <a href="https://www.buymeacoffee.com/highcenburg">coffee</a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock content %}

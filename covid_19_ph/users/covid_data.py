@@ -1,0 +1,50 @@
+import requests
+import environ
+
+
+def get_data():
+    data_url = env("DATA_URL")
+    headers = {'Accept': 'application/json'}
+    r = requests.get(data_url, headers=headers)
+    stat = r.json()
+    stat_data = {
+      'stat': stat
+    }
+    return stat_data
+
+
+def get_vaccine():
+  vaccine_url = env("VACCINE_URL")
+  headers = {'Accept': 'application/json'}
+  request = requests.get(vaccine_url, headers=headers)
+  vaccine = request.json()
+  vaccine_data = {
+    'vaccine': vaccine
+  }
+  return vaccine_data
+
+
+def get_therapeutic():
+  tp_url = env("TP_URL")
+  headers = {'Accept': 'application/json'}
+  r = requests.get(tp_url, headers=headers)
+  therapeutic = r.json()
+  tp_data = {
+    'therapeutic': therapeutic
+  }
+  return tp_data
+
+
+def get_news():
+    news_url = env("NEWS_URL")
+    querystring = {"safeSearch":"true","toPublishedDate":"null","fromPublishedDate":"null","withThumbnails":"true","pageSize":"10","q":"covid, covid vaccine trial, covid therapeutics","autoCorrect":"false","pageNumber":"1"}
+    headers = {
+      'x-rapidapi-host': env("API_HOST"),
+      'x-rapidapi-key': env("API_KEY"),
+    }
+    r = requests.get(news_url, headers=headers, params=querystring)
+    news = r.json()
+    article_data = {
+      'news': news,
+    }
+    return article_data
