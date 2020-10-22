@@ -7,6 +7,9 @@ from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
 from covid_19_ph.users.views import HomeView, VaccineView, TherapeuticView, NewsView
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
     path(
@@ -22,6 +25,7 @@ urlpatterns = [
     path("vaccine-tracker/", VaccineView.as_view(), name="vaccine"),
     path("therapeutics/", TherapeuticView.as_view(), name="therapeutic"),
     path("global-news/", NewsView.as_view(), name="news"),
+    path('sentry-debug/', trigger_error),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
