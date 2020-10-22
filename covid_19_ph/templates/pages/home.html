@@ -56,7 +56,7 @@
     <div class="grid-container">
       <h2 class="font-heading-xl margin-y-0">What's up with this disease?</h2>
       <p class="usa-intro">There are {{ stat.population|intcomma }} people in the country. Out of One Million, {{ stat.testsPerOneMillion|intcomma }}  only have been tested. There is one case for every {{ stat.oneCasePerPeople|intcomma }} people, {{ stat.oneDeathPerPeople|intcomma }} death cases, and {{ stat.activePerOneMillion|intcomma }} active cases per One Million. {{ stat.criticalPerOneMillion|floatformat }} are critical, and {{ stat.recoveredPerOneMillion|intcomma }} have recovered per One Million people.</p>
-      <a class="usa-button usa-button--big" href="#">Read more</a>
+      <a class="usa-button usa-button--big" href="{% url 'vaccine' %}">Read more</a>
     </div>
   </section>
 
