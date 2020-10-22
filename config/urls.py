@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
@@ -26,6 +26,7 @@ urlpatterns = [
     path("therapeutics/", TherapeuticView.as_view(), name="therapeutic"),
     path("global-news/", NewsView.as_view(), name="news"),
     path('sentry-debug/', trigger_error),
+    re_path('djga/', include('google_analytics.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS

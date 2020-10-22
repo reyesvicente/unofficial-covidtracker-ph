@@ -192,6 +192,10 @@ sentry_sdk.init(
     environment=env("SENTRY_ENVIRONMENT", default="production"),
     traces_sample_rate=env.float("SENTRY_TRACES_SAMPLE_RATE", default=0.0),
 )
+logging.error("Indiependent.to Sentry Health Check")
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': "UA-164161672-1",
+}
