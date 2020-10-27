@@ -1,106 +1,48 @@
-Covid-19 PH
-===========
+Unofficial COVID-19 Tracker Philippines
+=======================================
 
-Behold My Awesome Project!
+This is an unofficial tracker for the Philippines. A side project to
+enhance my skill in using APIs, Digital Ocean deployment and Docker.
 
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-     :target: https://github.com/ambv/black
-     :alt: Black code style
+Installation
+------------
 
+This web app uses
+`Cookiecutter-Django <cookiecutter-django.readthedocs.io/>`__,
+`Docker <https://docker.com>`__, `Digital
+Ocean <https://m.do.co/c/8773beb85774>`__ for hosting, `Contextual News
+API <https://rakuten.net>`__ and the `US Web Design
+System <https://designsystem.digital.gov/>`__.
 
-:License: MIT
+Running in you localhost is easy with ``docker-compose``. Check the
+`official cookiecutter-django
+docks <https://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html>`__
+on how to run it locally with docker.
 
+.. code:: bash
 
-Settings
---------
+    $ docker-compose -f local.yml build
+    $ docker-compose -f local.yml up
 
-Moved to settings_.
+Use
+`this <https://codeburst.io/a-full-deployment-of-cookiecutter-django-on-digitalocean-with-docker-5293f31a1fdc?source=rss----61061eb0c96b---4>`__
+guide for deploying the app to `Digital
+Ocean <https://m.do.co/c/8773beb85774>`__\ (affiliate link). Use the
+affiliate link to get $100 for 2 months in Digital Ocean.
 
-.. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
+Contributing
+------------
 
-Basic Commands
---------------
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
 
-Setting Up Your Users
-^^^^^^^^^^^^^^^^^^^^^
+The app has not been tested. I've only used Django's testing tools hence
+will only test this using the said testing tools.
 
-* To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
+If you like this project, consider buying me a
+`coffee <https://www.buymeacoffee.com/highcenburg>`__.
 
-* To create an **superuser account**, use this command::
+License
+-------
 
-    $ python manage.py createsuperuser
-
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
-
-Type checks
-^^^^^^^^^^^
-
-Running type checks with mypy:
-
-::
-
-  $ mypy covid_19_ph
-
-Test coverage
-^^^^^^^^^^^^^
-
-To run the tests, check your test coverage, and generate an HTML coverage report::
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-Running tests with py.test
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-  $ pytest
-
-Live reloading and Sass CSS compilation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Moved to `Live reloading and SASS compilation`_.
-
-.. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
-
-
-
-
-
-Sentry
-^^^^^^
-
-Sentry is an error logging aggregator service. You can sign up for a free account at  https://sentry.io/signup/?code=cookiecutter  or download and host it yourself.
-The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
-
-You must set the DSN url in production.
-
-
-Deployment
-----------
-
-The following details how to deploy this application.
-
-
-Heroku
-^^^^^^
-
-See detailed `cookiecutter-django Heroku documentation`_.
-
-.. _`cookiecutter-django Heroku documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-on-heroku.html
-
-
-
-Docker
-^^^^^^
-
-See detailed `cookiecutter-django Docker documentation`_.
-
-.. _`cookiecutter-django Docker documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html
-
-
-
+`MIT <https://choosealicense.com/licenses/mit/>`__
