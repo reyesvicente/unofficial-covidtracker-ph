@@ -285,3 +285,6 @@ REST_FRAMEWORK = {
 CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': "UA-164161672-1",
+}
