@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-{% load static humanize cache %}
+{% load static humanize %}
 {% block content %}
 <main id="main-content">
   <section class="usa-hero" aria-label="Introduction">
   <div class="grid-container">
-  {% cache 15 header %}
     <div class="usa-hero__callout">
       <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt"><small class="text-underline">{% now "D, M j Y" %}</small><br>CASES TODAY:</span>+{{ stat.todayCases|intcomma }}
       </h1>
@@ -13,7 +12,6 @@
       <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">RECOVERED TODAY:</span>+{{ stat.todayRecovered|intcomma }}
       </h1><a class="usa-button" href="{% url 'news' %}">Read more</a>
     </div>
-  {% endcache %}
   </div>
 </section>
 
