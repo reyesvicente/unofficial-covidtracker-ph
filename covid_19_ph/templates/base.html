@@ -33,16 +33,16 @@
 
 <body>
   <div style="display:none">
-      <img src="{% google_analytics %}" width="0" height="0" />
+      <img data-src="{% google_analytics %}" class="lazyload" width="0" height="0" />
   </div>
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 
-  <section class="usa-banner" aria-label="Official government website">
+  <section class="usa-banner" aria-label="Unofficial COVID-19 Tracker Philippines">
     <div class="usa-accordion">
       <header class="usa-banner__header">
         <div class="usa-banner__inner">
           <div class="grid-col-auto">
-            <img class="usa-banner__header-flag" src="https://disease.sh/assets/img/flags/ph.png" alt="U.S. flag">
+            <img class="usa-banner__header-flag lazyload" data-src="https://disease.sh/assets/img/flags/ph.png" alt="P.H. flag">
           </div>
           <div class="grid-col-fill tablet:grid-col-auto">
             <p class="usa-banner__header-text">Unofficial COVID-19 PH Tracker</p>
@@ -56,26 +56,26 @@
       <div class="usa-banner__content usa-accordion__content" id="gov-banner">
         <div class="grid-row grid-gap-lg">
           <div class="usa-banner__guidance tablet:grid-col-6">
-            <img class="usa-banner__icon usa-media-block__img" src="https://disease.sh/assets/img/virus.png" role="img"
-              alt="Dot gov">
+            <img class="usa-banner__icon usa-media-block__img lazyload" data-src="https://disease.sh/assets/img/virus.png" role="img"
+              alt="Icon by icons8.com">
             <div class="usa-media-block__body">
               <p>
                 <strong>
                   disease.sh - Open Disease Data
                 </strong>
                 <br />
-                Sourced data from <a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a>, the
-                <a href="https://github.com/nytimes/covid-19-data">New York Times</a>, <a
-                  href="https://www.worldometers.info/coronavirus/">Worldometers</a>, and <a
-                  href="https://github.com/ActiveConclusion/COVID19_mobility">Apple reports</a> to give you a
+                Sourced data from <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" rel="noreferrer">Johns Hopkins University</a>, the
+                <a href="https://github.com/nytimes/covid-19-data" target="_blank" rel="noreferrer">New York Times</a>, <a
+                  href="https://www.worldometers.info/coronavirus/" target="_blank" rel="noreferrer">Worldometers</a>, and <a
+                  href="https://github.com/ActiveConclusion/COVID19_mobility" target="_blank" rel="noreferrer">Apple reports</a> to give you a
                 comprehensive view of the data.
 
               </p>
             </div>
           </div>
           <div class="usa-banner__guidance tablet:grid-col-6">
-            <img class="usa-banner__icon usa-media-block__img" src="{% static 'img/vicente-g-reyes-developer.png' %}"
-              role="img" alt="Https">
+            <img class="usa-banner__icon usa-media-block__img lazyload" data-src="{% static 'img/vicente-g-reyes-developer.png' %}"
+              role="img" alt="Image of Vicente G. Reyes">
             <div class="usa-media-block__body">
               <p>
                 <strong>
@@ -83,8 +83,8 @@
                 </strong>
                 <br />
                 A Self-Directed Learner, a Freelance Web Developer, a Volunteer Developer at <a
-                  href="https://projectwebsite.org">Project Website</a>, Moderator at <a href="https://dev.to">DEV</a>,
-                & a Podcast host. <a href="https://vgreyes.com">www.vgreyes.com</a>
+                  href="https://projectwebsite.org" target="_blank" rel="noreferrer">Project Website</a>, Moderator at <a href="https://dev.to" target="_blank" rel="noreferrer">DEV</a>,
+                & a Podcast host. <a href="https://vgreyes.com" target="_blank" rel="noreferrer">www.vgreyes.com</a>
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@
       <button class="usa-menu-btn">Menu</button>
     </div>
     <nav aria-label="Primary navigation" class="usa-nav">
-      <div class="usa-nav__inner"><button class="usa-nav__close"><img src="{% static 'img/close.svg' %}" role="img"
+      <div class="usa-nav__inner"><button class="usa-nav__close"><img class="lazyload" data-src="{% static 'img/close.svg' %}" role="img"
             alt="close"></button>
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item">
@@ -147,10 +147,10 @@
         <div class="usa-nav__secondary">
           <ul class="usa-nav__secondary-links">
             <li class="usa-nav__secondary-item">
-              <a href="https://www.doh.gov.ph/">Department of Health</a>
+              <a href="https://www.doh.gov.ph/" target="_blank" rel="noreferrer">Department of Health</a>
             </li>
             <li class="usa-nav__secondary-item">
-              <a href="https://www.doh.gov.ph/covid19tracker">Official COVID-19 PH Tracker</a>
+              <a href="https://www.doh.gov.ph/covid19tracker" target="_blank" rel="noreferrer">Official COVID-19 PH Tracker</a>
             </li>
           </ul>
 
@@ -183,7 +183,7 @@
         <div class="grid-row grid-gap">
           <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
             <div class="mobile-lg:grid-col-auto">
-              <img class="usa-footer__logo-img" src="{% static 'img/vicente-g-reyes-developer.png' %}" alt="">
+              <img class="usa-footer__logo-img lazyload" data-src="{% static 'img/vicente-g-reyes-developer.png' %}" alt="Logo by icons8.com">
             </div>
             <div class="mobile-lg:grid-col-auto">
               <h3 class="usa-footer__logo-heading">Vicente G. Reyes</h3>
@@ -192,22 +192,22 @@
           <div class="usa-footer__contact-links mobile-lg:grid-col-6">
             <div class="usa-footer__social-links grid-row grid-gap-1">
               <div class="grid-col-auto">
-                <a class="usa-social-link usa-social-link--facebook" href="https://facebook.com/highcenbugtv">
+                <a class="usa-social-link usa-social-link--facebook" href="https://facebook.com/highcenbugtv" target="_blank" rel="noreferrer">
                   <span>Facebook</span>
                 </a>
               </div>
               <div class="grid-col-auto">
-                <a class="usa-social-link usa-social-link--twitter" href="https://twitter.com/highcenburg">
+                <a class="usa-social-link usa-social-link--twitter" href="https://twitter.com/highcenburg" target="_blank" rel="noreferrer">
                   <span>Twitter</span>
                 </a>
               </div>
               <div class="grid-col-auto">
-                <a class="usa-social-link usa-social-link--youtube" href="https://youtube.com/user/icenreyes">
+                <a class="usa-social-link usa-social-link--youtube" href="https://youtube.com/user/icenreyes" target="_blank" rel="noreferrer">
                   <span>YouTube</span>
                 </a>
               </div>
               <div class="grid-col-auto">
-                <a class="usa-social-link usa-social-link--dev" href="https://dev.to/highcenburg">
+                <a class="usa-social-link usa-social-link--dev" href="https://dev.to/highcenburg" target="_blank" rel="noreferrer">
                   <span>DEV</span>
                 </a>
               </div>
@@ -235,6 +235,7 @@
 
   <script src="{% static 'js/main.min.js' %}"></script>
   <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+  <script src="lazysizes.min.js" async></script>
   {% endblock javascript %}
 </body>
 
