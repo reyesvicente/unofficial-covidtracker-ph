@@ -33,7 +33,7 @@
 
 <body>
   <div style="display:none">
-      <img data-src="{% google_analytics %}" class="lazyload" width="0" height="0" />
+      <img src="{% google_analytics %}" width="0" height="0" />
   </div>
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 
@@ -42,7 +42,7 @@
       <header class="usa-banner__header">
         <div class="usa-banner__inner">
           <div class="grid-col-auto">
-            <img class="usa-banner__header-flag lazyload" data-src="https://disease.sh/assets/img/flags/ph.png" alt="P.H. flag">
+            <img class="usa-banner__header-flag" src="https://disease.sh/assets/img/flags/ph.png" alt="P.H. flag">
           </div>
           <div class="grid-col-fill tablet:grid-col-auto">
             <p class="usa-banner__header-text">Unofficial COVID-19 PH Tracker</p>
@@ -56,7 +56,7 @@
       <div class="usa-banner__content usa-accordion__content" id="gov-banner">
         <div class="grid-row grid-gap-lg">
           <div class="usa-banner__guidance tablet:grid-col-6">
-            <img class="usa-banner__icon usa-media-block__img lazyload" data-src="https://disease.sh/assets/img/virus.png" role="img"
+            <img class="usa-banner__icon usa-media-block__img" src="https://disease.sh/assets/img/virus.png" role="img"
               alt="Icon by icons8.com">
             <div class="usa-media-block__body">
               <p>
@@ -74,7 +74,7 @@
             </div>
           </div>
           <div class="usa-banner__guidance tablet:grid-col-6">
-            <img class="usa-banner__icon usa-media-block__img lazyload" data-src="{% static 'img/vicente-g-reyes-developer.png' %}"
+            <img class="usa-banner__icon usa-media-block__img" src="{% static 'img/vicente-g-reyes-developer.png' %}"
               role="img" alt="Image of Vicente G. Reyes">
             <div class="usa-media-block__body">
               <p>
@@ -102,7 +102,7 @@
       <button class="usa-menu-btn">Menu</button>
     </div>
     <nav aria-label="Primary navigation" class="usa-nav">
-      <div class="usa-nav__inner"><button class="usa-nav__close"><img class="lazyload" data-src="{% static 'img/close.svg' %}" role="img"
+      <div class="usa-nav__inner"><button class="usa-nav__close"><img src="{% static 'img/close.svg' %}" role="img"
             alt="close"></button>
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item">
@@ -183,7 +183,7 @@
         <div class="grid-row grid-gap">
           <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
             <div class="mobile-lg:grid-col-auto">
-              <img class="usa-footer__logo-img lazyload" data-src="{% static 'img/vicente-g-reyes-developer.png' %}" alt="Logo by icons8.com">
+              <img class="usa-footer__logo-img" src="{% static 'img/vicente-g-reyes-developer.png' %}" alt="Logo by icons8.com">
             </div>
             <div class="mobile-lg:grid-col-auto">
               <h3 class="usa-footer__logo-heading">Vicente G. Reyes</h3>
@@ -235,7 +235,6 @@
 
   <script src="{% static 'js/main.min.js' %}"></script>
   <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
-  <script src="lazysizes.min.js" async></script>
   {% endblock javascript %}
 </body>
 

@@ -19,14 +19,14 @@
   <div class="grid-container">
     <div class="usa-graphic-list__row grid-row grid-gap">
       <div class="usa-media-block tablet:grid-col">
-        <img class="usa-media-block__img lazyload"  data-src="{% static 'icons/icons8-joyent-96.png' %}" alt="Total Active Cases">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-joyent-96.png' %}" alt="Total Active Cases">
         <div class="usa-media-block__body">
           <h2 class="usa-graphic-list__heading">{{ stat.active|intcomma }} total active cases</h2>
           <p>The number of cases of people who have the virus.</p>
         </div>
       </div>
       <div class="usa-media-block tablet:grid-col">
-        <img class="usa-media-block__img lazyload"  data-src="{% static 'icons/icons8-total-sales-96.png' %}" alt="Total Cases">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-total-sales-96.png' %}" alt="Total Cases">
         <div class="usa-media-block__body">
           <h2 class="usa-graphic-list__heading">{{ stat.cases|intcomma }} total cases</h2>
           <p>The number of cases of people who have tested positive.</p>
@@ -35,14 +35,14 @@
     </div>
     <div class="usa-graphic-list__row grid-row grid-gap">
       <div class="usa-media-block tablet:grid-col">
-        <img class="usa-media-block__img lazyload"  data-src="{% static 'icons/icons8-danger-of-death-96.png' %}" alt="Total Deaths">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-danger-of-death-96.png' %}" alt="Total Deaths">
         <div class="usa-media-block__body">
           <h2 class="usa-graphic-list__heading">{{ stat.deaths|intcomma }} total deaths</h2>
           <p>The number of cases of people who have passed away.</p>
         </div>
       </div>
       <div class="usa-media-block tablet:grid-col">
-        <img class="usa-media-block__img lazyload"  data-src="{% static 'icons/icons8-recovery-96.png' %}" alt="Total Recovered">
+        <img class="usa-media-block__img"  src="{% static 'icons/icons8-recovery-96.png' %}" alt="Total Recovered">
         <div class="usa-media-block__body">
           <h2 class="usa-graphic-list__heading">{{ stat.recovered|intcomma }} total cases recovered</h2>
           <p>The number of cases of people who have recovered from the virus.</p>
