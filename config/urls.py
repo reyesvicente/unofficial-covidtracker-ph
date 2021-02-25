@@ -5,7 +5,7 @@ from django.urls import include, path, re_path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
-from covid_19_ph.users.views import HomeView, VaccineView, TherapeuticView, NewsView
+from covid_19_ph.core.views import HomeView, VaccineView, TherapeuticView, NewsView
 
 def trigger_error(request):
     division_by_zero = 1 / 0

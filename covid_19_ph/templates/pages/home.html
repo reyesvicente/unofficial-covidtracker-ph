@@ -5,11 +5,11 @@
   <section class="usa-hero" aria-label="Introduction">
   <div class="grid-container">
     <div class="usa-hero__callout">
-      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt"><small class="text-underline">{% now "D, M j Y" %}</small><br>CASES TODAY:</span>+{{ stat.todayCases|intcomma }}
+      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt"><small class="text-underline">{% now "D, M j Y" %}</small><br>{% if stat.todayCases  == 0 %} Fetching data from source.. {% else %}CASES TODAY:</span>+{{ stat.todayCases|intcomma }} {% endif %}
       </h1>
-      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">DEATHS TODAY:</span>+{{ stat.todayDeaths|intcomma }}
+      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">{% if stat.todayDeaths  == 0 %} Fetching data from source.. {% else %}DEATHS TODAY:</span>+{{ stat.todayDeaths|intcomma }} {% endif %}
       </h1>
-      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">RECOVERED TODAY:</span>+{{ stat.todayRecovered|intcomma }}
+      <h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">{% if stat.todayRecovered  == 0 %} Fetching data from source.. {% else %}RECOVERED TODAY:</span>+{{ stat.todayRecovered|intcomma }} {% endif %}
       </h1><a class="usa-button" href="{% url 'news' %}">Read global news</a>
     </div>
   </div>

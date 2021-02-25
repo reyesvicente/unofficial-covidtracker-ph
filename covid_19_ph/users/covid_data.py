@@ -4,7 +4,7 @@ import environ
 env = environ.Env()
 
 def get_data():
-    DATA_URL = env("DATA_URL")
+    DATA_URL = 'https://corona.lmao.ninja/v3/covid-19/countries/ph?strict=true'
     headers = {'Accept': 'application/json'}
     r = requests.get(DATA_URL, headers=headers)
     stat = r.json()
