@@ -1,6 +1,7 @@
 import requests
+import environ
 
-
+env = environ.Env()
 def get_data():
     url = "https://disease.sh/v3/covid-19/countries/PH"
     headers = {'Accept': 'application/json'}
