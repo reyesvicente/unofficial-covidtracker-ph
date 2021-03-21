@@ -25,10 +25,9 @@ jobs:
       run: |
         docker-compose -f local.yml run --rm django python -m pip install --upgrade pip
         docker-compose -f local.yml run --rm django python -m pip install -r requirements/production.txt
-    - name: Build image
-      run: |
-        docker-compose -f local.yml build
-        
+    - name: Django Security Check
+      uses: victoriadrake/django-security-check@v1.1.0
+
         
         
         
