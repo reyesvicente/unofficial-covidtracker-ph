@@ -23,8 +23,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        docker-compose -f production.yml run --rm django python -m pip install --upgrade pip
-        docker-compose -f production.yml run --rm django python python -m pip install -r requirements/production.txt
+        docker-compose -f local.yml run --rm django python -m pip install --upgrade pip
+        docker-compose -f local.yml run --rm django python python -m pip install -r requirements/production.txt
     - name: Run Tests
       run: |
-        docker-compose -f production.yml run --rm django python manage.py test
+        docker-compose -f local.yml run --rm django python manage.py test
